@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <div class="builder__side">
+            <h2>Button Builder</h2>
+            <div class="row text">
+                <h3>Text</h3>
+                <label>Text Value</label>
+                <input type="text" id="text" placeholder="Enter text">
+                <hr>
+                <label>Font Size</label>
+                <input type="number" id="font-size" placeholder="Enter Font size">
+                <hr>
+                <label>Text Color</label>
+                <input type="color" id="text-color" placeholder="Enter the HEX color code">
+            </div>
+            <div class="row size">
+                <h3>Size</h3>
+                <label>Width</label>
+                <input class="slider" type="range" id="width" min="0" max="120">
+                <hr>
+                <label>Height</label>
+                <input class="slider" type="range" id="height" min="0" max="64">
+            </div>
+            <div class="row other">
+                <h3>Other</h3>
+                <label>Border Radius</label>
+                <input class="slider" type="range" id="radius" min="0" max="30">
+                <hr>
+                <label style="display: inline;">Border</label>
+                <input type="checkbox" id="border" value="Border">
+                <hr>
+                <label>Background Color</label>
+                <input type="color" id="bg-color" placeholder="Enter background HEX code color">
+            </div>
+        </div>
+        <div class="button__side">
+            <button id="button" class="btn">Text</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
