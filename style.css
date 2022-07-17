@@ -43,7 +43,7 @@ h3 {
     padding: 1rem 2rem;
 }
 
-label {
+.label {
     display: block;
     margin-bottom: .25rem;
     font-size: 14px;
@@ -69,6 +69,10 @@ input:not([type=range]){
     display: inherit;
     justify-content: center;
     align-items: center;
+}
+
+.btn {
+    cursor: pointer;
 }
 
 .slider {
