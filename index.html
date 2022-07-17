@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="../vue.min.js"></script>
+    <!-- <script src="vue.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
 </head>
+
 <body>
-    
     <div id="app">
         <div class="builder__side">
             <h2>Button Builder</h2>
-            <div class="row text">
-                <h3>Text</h3>
-                <label>Text Value</label>
-                <input type="text" id="text" placeholder="Enter text">
+            <div class="row">
+                <input-box label-text="Button Text" input-type="text" place-text="Enter Button Text"
+                    v-on:send="getText">
+                </input-box>
                 <hr>
-                <label>Font Size</label>
-                <input type="number" id="font-size" placeholder="Enter Font size">
+                <input-box label-text="Font Size" input-type="number" place-text="Enter Font Size"
+                    v-on:send="getFontSize">
+                </input-box>
                 <hr>
-                <label>Text Color</label>
-                <input type="color" id="text-color" placeholder="Enter the HEX color code">
+                <input-box label-text="Text Color" input-type="color" v-on:send="getTextColor">
+                </input-box>
             </div>
-            <div class="row size">
-                <h3>Size</h3>
-                <label>Width</label>
-                <input class="slider" type="range" id="width" min="0" max="120">
+            <div class="row">
+                <input-box label-text="Width" input-type="range" :min="0" :max="200" class-name="slider"
+                    v-on:send="getWidth">
+                </input-box>
                 <hr>
-                <label>Height</label>
-                <input class="slider" type="range" id="height" min="0" max="64">
+                <input-box label-text="Height" input-type="range" :min="0" :max="200" class-name="slider"
+                    v-on:send="getHeight">
+                </input-box>
             </div>
-            <div class="row other">
-                <h3>Other</h3>
-                <label>Border Radius</label>
-                <input class="slider" type="range" id="radius" min="0" max="30">
+            <div class="row">
+                <input-box label-text="Radius" input-type="range" :min="0" :max="20" class-name="slider" v-on:send="getRadius">
+                </input-box>
                 <hr>
-                <label style="display: inline;">Border</label>
-                <input type="checkbox" id="border" value="Border">
+                <input-box label-text="Background Color" input-type="color" v-on:send="getBackgroundColor">
+                </input-box>
                 <hr>
-                <label>Background Color</label>
-                <input type="color" id="bg-color" placeholder="Enter background HEX code color">
+                <input-box label-text="Border" input-type="checkbox" v-on:send="getBorder">
+                </input-box>
             </div>
         </div>
         <div class="button__side">
-            <button id="button" class="btn">Text</button>
+            <button :style="styles" ref="btn" class="btn">{{printText}}</button>
         </div>
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>
