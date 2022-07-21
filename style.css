@@ -55,6 +55,10 @@ hr {
     color: #43a6f7;
 }
 
+input {
+    cursor: pointer;
+}
+
 input:not([type=checkbox], [type=color]) {
     width: 100%;
 }
