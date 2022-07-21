@@ -87,7 +87,11 @@ new Vue({
         styles: {
             fontSize: "",
             color: "",
-            backgroundColor: ""
+            backgroundColor: "",
+            width: "",
+            height: "",
+            borderRadius: "",
+            border: ""
         }
     },
     methods: {
@@ -109,15 +113,15 @@ new Vue({
             this.styles.color = value;
         },
         getWidth(value) {
-            this.$refs.btn.style.width = changeStyleWithRange(parseInt(value), 
+            this.styles.width = changeStyleWithRange(parseInt(value), 
             parseInt(window.getComputedStyle(this.$refs.btn).width), widthOldValue) + "px";
         },
         getHeight(value){
-            this.$refs.btn.style.height = changeStyleWithRange(parseInt(value), 
+            this.styles.height = changeStyleWithRange(parseInt(value), 
             parseInt(window.getComputedStyle(this.$refs.btn).height), heightOldValue) + "px"
         },
         getRadius(value){
-            this.$refs.btn.style.borderRadius = changeStyleWithRange(parseInt(value), 
+            this.styles.borderRadius = changeStyleWithRange(parseInt(value), 
             parseInt(window.getComputedStyle(this.$refs.btn).borderRadius), radiusOldValue) + "px"
         },
         getBackgroundColor(value) {
@@ -125,10 +129,10 @@ new Vue({
         },
         getBorder(value){
             if (!value){
-                this.$refs.btn.style.border = "1px solid gray";
+                this.styles.border = "1px solid gray";
             }
             else {
-                this.$refs.btn.style.border = "none";
+                this.styles.border = "none";
             }
         }
     },
