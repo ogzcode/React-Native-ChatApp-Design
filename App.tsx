@@ -1,15 +1,20 @@
+import 'react-native-gesture-handler';
+
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Navigation from './src/navigation/Navigation';
+import { ThemeProvider } from './src/theme/useTheme';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Navigation />
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <ThemeProvider>
+      <SafeAreaView style={styles.container}>
+        <Navigation />
+        <StatusBar/>
+      </SafeAreaView>
+    </ThemeProvider>
   );
 }
 
