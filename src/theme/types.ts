@@ -3,6 +3,9 @@ export interface ThemeColors {
     secondary: string;
     background: string;
     border: string;
+    success: string;
+    warning: string;
+    danger: string;
 }
 
 export interface Theme {
@@ -12,5 +15,5 @@ export interface Theme {
 
 export interface ThemeContextType {
     theme: Theme;
-    toggleTheme: () => void;
+    toggleTheme: (themeName?: string) => void;
 } 
